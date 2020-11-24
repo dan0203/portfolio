@@ -38,6 +38,7 @@ $(document).ready(function(){
     // Pie Chart
     // Start chart animation when section shows on scroll
     var skillsTopOffset = $(".skillSection").offset().top;
+    
     $(window).scroll(function(){
         if(window.pageYOffset > skillsTopOffset - $(window).height() + 200){
             $('.chart').easyPieChart({
@@ -55,4 +56,19 @@ $(document).ready(function(){
     });
 
     // Count up ?
+    // Start count animation when section shows on scroll
+    var countUpFinished = false;
+    var statsTopOffset = $(".statsSection").offset().top;
+    
+    $(window).scroll(function () {
+        if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
+            document.querySelectorAll('.counter').forEach(function(element){
+                var endVal = parseInt(element.textContent);
+                var numAnim = new countUp.CountUp(element, endVal);
+                numAnim.start();
+            });
+
+            countUpFinished = true;
+        }
+    });
 });
