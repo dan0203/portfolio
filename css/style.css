@@ -1,3 +1,4 @@
+/* SLIDER */
 .overlay {
     width: 100%;
     height: 100%;
@@ -27,7 +28,9 @@
     left: 20px;
     background-image: url(../img/icons/prev.png);
 }
+/* SLIDER */
 
+/* TITLE */
 .titleMessage {
     position: absolute;
     width: 100%;
@@ -52,3 +55,14 @@
 .titleMessage .heading .sub {
     font-size: 23px;
 }
+/* TITLE */
+
+.section {
+    padding: 100px 0;
+}
+
+/* ABOUT */
+.aboutImage {
+    max-width: 100%;
+}
+/* ABOUT */
