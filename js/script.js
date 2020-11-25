@@ -55,7 +55,7 @@ $(document).ready(function(){
         }
     });
 
-    // Count up ?
+    // Count up
     // Start count animation when section shows on scroll
     var countUpFinished = false;
     var statsTopOffset = $(".statsSection").offset().top;
@@ -71,4 +71,38 @@ $(document).ready(function(){
             countUpFinished = true;
         }
     });
+
+    // Fancy box
+    $("[data-fancybox]").fancybox();
+
+    // Isotope
+    // On page load
+    $(".items").isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    });
+
+    // On click of a filter
+    $("#filters a").click(function(){
+        $("#filters .current").removeClass("current");
+        $(this).addClass("current");
+
+        var selector = $(this).attr("data-filter");
+
+        $(".items").isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 1500,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        return false;
+    });
+
 });
