@@ -320,3 +320,14 @@ body {
     width: 100%;
 }
 /* PORTFOLIO */
+
+/* COPYRIGHT */
+.copyrightSection {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 5px;
+}
+
+.copyrightSection p {
+    margin: 0px;
+}
