@@ -1,3 +1,21 @@
+// Hide the loader after 500 ms and then the white background after 750 ms
+$(window).on("load", function(){
+    $(".loader .inner").fadeOut(500, function(){
+        $(".loader").fadeOut(750);
+    });
+
+    // Isotope
+    // On page load
+    $(".items").isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    });
+});
+
 $(document).ready(function(){
     // Image slider
     $('#slides').superslides({
@@ -74,17 +92,6 @@ $(document).ready(function(){
 
     // Fancy box
     $("[data-fancybox]").fancybox();
-
-    // Isotope
-    // On page load
-    $(".items").isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 1500,
-            easing: 'linear',
-            queue: false
-        }
-    });
 
     // On click of a filter
     $("#filters a").click(function(){
